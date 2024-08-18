@@ -1,9 +1,12 @@
+import Hero from "../components/Hero/Hero";
 import { Container } from "../styles/GlobalStyles";
 
 const HomePage = () => {
   return (
     <>
-      <Container></Container>
+      <Container>
+        <Hero />
+      </Container>
     </>
   );
 };

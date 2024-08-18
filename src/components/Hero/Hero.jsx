@@ -1,4 +1,12 @@
+import { Herofon, Title } from "./Hero.styled";
+
 const Hero = () => {
-  return <></>;
+  return (
+    <>
+      <Herofon>
+        <Title>dive deep in to the future</Title>
+      </Herofon>
+    </>
+  );
 };
-export default Hero
+export default Hero;
