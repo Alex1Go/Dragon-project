@@ -22,3 +22,15 @@ export const Title = styled.h1`
   margin-top: 148px;
   margin-left: 32px;
 `;
+export const SvgStyled = styled.svg`
+  background-color: green;
+  fill: ${globalColor.colorWhite};
+  width: 33.02px;
+  height: 33px;
+`;
+export const Line = styled.div`
+  width: 5px;
+  height: 1191px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  transform: rotate(-90deg);
+`;
