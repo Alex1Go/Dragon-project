@@ -3,12 +3,18 @@ import styled from "styled-components";
 
 import { globalColor } from "../../styles/roots";
 
-export const HeaderContainer = styled.header``;
+export const HeaderContainer = styled.header`
+  position: absolute;
+  top: 48px;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+`;
 
 export const Navigation = styled.div`
   margin: 0 auto;
   display: flex;
-  width: 1320px;
+  width: 1256px;
   height: 99px;
   align-items: center;
   justify-content: space-between;
