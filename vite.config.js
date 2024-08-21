@@ -12,5 +12,5 @@ export default defineConfig({
       assets: "/src/assets",
     },
   },
-  base: "/dragon-project/",
+  base: "/Dragon-project/",
 });
