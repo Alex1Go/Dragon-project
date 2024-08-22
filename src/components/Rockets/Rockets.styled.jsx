@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 // import { globalColor } from "../../styles/roots";
 
+export const Title = styled.h2`
+  font-weight: 700;
+  font-size: 64px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 32px;
+`;
+
 export const Sliderconteiner = styled.div`
   display: flex;
   align-items: center;
@@ -21,7 +29,7 @@ export const Slideric = styled.div`
 export const Slide = styled.div`
   flex: 1;
   margin: 0 10px;
-  min-width: calc(100% / 3); /* Show 3 items at a time */
+  min-width: calc(100% / 3);
   box-sizing: border-box;
 `;
 export const Sliderbutton = styled.button`

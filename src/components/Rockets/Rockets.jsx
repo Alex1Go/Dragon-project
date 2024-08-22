@@ -1,77 +1,120 @@
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import RocketItem from '../RocketItem/RocketItem';
-
-const RocketSlider = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    nextArrow: <button>Next</button>,
-    prevArrow: <button>Prev</button>,
-  };
-  return (
-    <>
-      <h2>Our Rockets</h2>
-      <Slider {...settings}>
-        {/* {rockets.map((rocket) => (
-          <div key={rocket.id}> */}
-        <RocketItem />
-        {/* </div>
-        ))} */}
-      </Slider>
-    </>
-  );
-};
-
-export default RocketSlider;
-
-// import { useEffect } from 'react';
 // import Slider from 'react-slick';
-// import { useSelector, useDispatch } from 'react-redux';
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 // import RocketItem from '../RocketItem/RocketItem';
-// import { fetchDragons } from '../../redux/operation';
 
 // const RocketSlider = () => {
-//   const dispatch = useDispatch();
-//   const rockets = useSelector((state) => state.dragons.items);
-//   const status = useSelector((state) => state.dragons.status);
-
-//   useEffect(() => {
-//     dispatch(fetchDragons());
-//   }, [dispatch]);
-
 //   const settings = {
-//     dots: true,
-//     infinite: true,
-//     speed: 500,
+//     lazyLoad: 'ondemand',
 //     slidesToShow: 3,
 //     slidesToScroll: 1,
-//     nextArrow: <button>Next</button>,
-//     prevArrow: <button>Prev</button>,
 //   };
-
-//   if (status === 'loading') {
-//     return <div>Loading...</div>;
-//   }
-
 //   return (
 //     <>
 //       <h2>Our Rockets</h2>
 //       <Slider {...settings}>
-//         {rockets.map((rocket) => (
-//           <div key={rocket.id}>
-//             <RocketItem rocket={rocket} />
-//           </div>
-//         ))}
+//         <RocketItem />
 //       </Slider>
 //     </>
 //   );
 // };
 
 // export default RocketSlider;
+
+// import RocketItem from '../RocketItem/RocketItem';
+// import Slider from 'react-slick';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
+
+// const RocketSlider = () => {
+//   const settings = {
+//     dots: true,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 3,
+//     slidesToScroll: 1,
+//     responsive: [
+//       {
+//         breakpoint: 1024,
+//         settings: {
+//           slidesToShow: 2,
+//           slidesToScroll: 1,
+//           infinite: true,
+//           dots: true,
+//         },
+//       },
+//       {
+//         breakpoint: 600,
+//         settings: {
+//           slidesToShow: 1,
+//           slidesToScroll: 1,
+//         },
+//       },
+//     ],
+//   };
+
+//   return (
+//     <>
+//       <h2>Our Rockets</h2>
+//       <Slider {...settings}>
+//         <RocketItem />
+//       </Slider>
+//     </>
+//   );
+// };
+
+// export default RocketSlider;
+import { useEffect } from 'react';
+import RocketItem from '../RocketItem/RocketItem';
+import Slider from 'react-slick';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchDragons } from '../../redux/operation';
+import { selectDragons } from '../../redux/selector';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { Title } from './Rockets.styled';
+
+const RocketSlider = () => {
+  const dispatch = useDispatch();
+  const { items: rockets, status } = useSelector(selectDragons);
+
+  useEffect(() => {
+    dispatch(fetchDragons());
+  }, [dispatch]);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Error loading rockets.</div>;
+  }
+
+  return (
+    <>
+      <section style={{ paddingBottom: '100px' }}>
+        <Title>Our Rockets</Title>
+        <Slider {...settings}>
+          {rockets.map((rocket) =>
+            rocket.flickr_images.map((image, index) => (
+              <RocketItem
+                key={`${rocket.id}-${index}`}
+                rocket={{ ...rocket, image }}
+              />
+            ))
+          )}
+        </Slider>
+      </section>
+    </>
+  );
+};
+
+export default RocketSlider;
