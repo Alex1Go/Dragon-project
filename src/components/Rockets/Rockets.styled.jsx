@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { globalColor } from "../../styles/roots";
 
 export const Title = styled.h2`
   font-weight: 700;

@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "John Anderson",
+        "role": "Commander",
+        "image": "/team/img_5.png"
+    },
+    {
+        "id": 2,
+        "name": "Emily Carter",
+        "role": "Pilot",
+        "image": "/team/img_9.png"
+    },
+    {
+        "id": 3,
+        "name": "Michael Brown",
+        "role": "Mission Specialist",
+        "image": "/team/img_1.png"
+    },
+    {
+        "id": 4,
+        "name": "Sophia Martinez",
+        "role": "Flight Engineer",
+        "image": "/team/img_4.png"
+    },
+    {
+        "id": 5,
+        "name": "Liam Johnson",
+        "role": "Payload Specialist",
+        "image": "/team/img_2.png"
+    },
+    {
+        "id": 6,
+        "name": "Olivia Garcia",
+        "role": "Mission Specialist",
+        "image": "/team/img_6.png"
+    },
+    {
+        "id": 7,
+        "name": "James Wilson",
+        "role": "Flight Engineer",
+        "image": "/team/img_3.png"
+    },
+    {
+        "id": 8,
+        "name": "Ava Miller",
+        "role": "Mission Specialist",
+        "image": "/team/img_7.png"
+    },
+    {
+        "id": 9,
+        "name": "Benjamin Lee",
+        "role": "Commander",
+        "image": "/team/img_8.png"
+    },
+    {
+        "id": 10,
+        "name": "Ella Robinson",
+        "role": "Pilot",
+        "image": "/team/img_11.png"
+    },
+    {
+        "id": 11,
+        "name": "Alexander Thompson",
+        "role": "Payload Specialist",
+        "image": "/team/img_10.png"
+    },
+    {
+        "id": 12,
+        "name": "Mia Martinez",
+        "role": "Flight Engineer",
+        "image": "/team/img_12.png"
+    }
+]
