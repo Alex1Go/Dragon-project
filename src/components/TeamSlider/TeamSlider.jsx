@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import teamData from '../../helpers/team.json';
+import sprite from '../../assets/sprite.svg';
 import {
   Img,
   ImgBox,
@@ -9,6 +10,7 @@ import {
   Slide,
   SliderContainer,
   SlidesWrapper,
+  SvgStyled,
 } from './TeamSlider.styled';
 
 const images = import.meta.glob('../../assets/team/*.png', { eager: true });
@@ -76,7 +78,12 @@ const TeamSlider = () => {
           )
         }
         aria-label="Previous Slide"
-      />
+      >
+        <SvgStyled>
+          <use href={sprite + '#icon-Vector-8'} />
+        </SvgStyled>
+      </NavButton>
+
       <NavButton
         direction="next"
         onClick={() =>
@@ -85,7 +92,11 @@ const TeamSlider = () => {
           )
         }
         aria-label="Next Slide"
-      />
+      >
+        <SvgStyled style={{ transform: 'rotate(180deg)' }}>
+          <use href={sprite + '#icon-Vector-8'} />
+        </SvgStyled>
+      </NavButton>
       <SlidesWrapper translate={-currentIndex * 100} ref={slideRef}>
         {teamData.map((member) => {
           const imagePath = `../../assets${member.image}`;

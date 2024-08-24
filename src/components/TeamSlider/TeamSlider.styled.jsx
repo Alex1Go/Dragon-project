@@ -1,20 +1,22 @@
 import styled from 'styled-components';
+import { globalColor } from '../../styles/roots';
 
 export const SliderContainer = styled.div`
-  position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 874px;
   overflow: hidden;
 `;
 export const SlidesWrapper = styled.div`
   display: flex;
+  gap: 20px;
   transition: transform 0.5s ease-in-out;
   transform: translateX(${(props) => props.translate}%);
 `;
 export const Slide = styled.div`
-  min-width: 100%;
+  min-width: 423px;
   box-sizing: border-box;
   display: flex;
+  gap: 20px;
   justify-content: center;
   align-items: center;
 `;
@@ -52,8 +54,7 @@ export const Name = styled.h3`
 export const NavButton = styled.button`
   position: absolute;
   bottom: 0;
-  ${(props) => (props.direction === 'prev' ? 'left: 20px;' : 'right: 20px;')}
-  transform: translateY(-50%);
+  ${(props) => (props.direction === 'prev' ? 'left: 0;' : 'right: 1059px;')};
   background-color: #ffffff;
   width: 125px;
   height: 126px;
@@ -61,33 +62,21 @@ export const NavButton = styled.button`
   cursor: pointer;
   z-index: 10;
   transition: background-color 0.3s;
+  text-align: center;
 
   &:hover {
-    background-color: #fff;
+    background-color: rgba(211, 208, 208, 0.5);
   }
 
-  &::before {
+  /* &::before {
     content: '${(props) => (props.direction === 'prev' ? '‹' : '›')}';
-    font-size: 24px;
+    font-size: 65px;
     color: #333;
-  }
+  } */
 `;
-
-// export const DotsContainer = styled.div`
-//   position: absolute;
-//   bottom: 20px;
-//   left: 50%;
-//   display: flex;
-//   transform: translateX(-50%);
-// `;
-
-// export const Dot = styled.button`
-//   width: 12px;
-//   height: 12px;
-//   border-radius: 50%;
-//   background-color: ${(props) => (props.active ? '#fff' : '#888')};
-//   border: none;
-//   margin: 0 5px;
-//   cursor: pointer;
-//   transition: background-color 0.3s;
-// `;
+export const SvgStyled = styled.svg`
+  margin: auto;
+  fill: ${globalColor.colorBlack};
+  width: 57px;
+  text-align: center;
+`;

@@ -1,12 +1,11 @@
-
 import { useEffect } from 'react';
 import RocketItem from '../RocketItem/RocketItem';
 import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDragons } from '../../redux/operation';
 import { selectDragons } from '../../redux/selector';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { Title } from './Rockets.styled';
 
 const RocketSlider = () => {
@@ -23,6 +22,27 @@ const RocketSlider = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    appendDots: (dots) => (
+      <div
+        style={{
+          color: 'white',
+          marginTop: '55px',
+          padding: '0 12px',
+        }}
+      >
+        <ul style={{ margin: 'px' }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: () => (
+      <div
+        style={{
+          color: 'white',
+          opacity: '.25',
+        }}
+      >
+        ●
+      </div>
+    ),
   };
 
   if (status === 'loading') {

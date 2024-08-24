@@ -64,11 +64,5 @@
         "name": "Alexander Thompson",
         "role": "Payload Specialist",
         "image": "/team/img_10.png"
-    },
-    {
-        "id": 12,
-        "name": "Mia Martinez",
-        "role": "Flight Engineer",
-        "image": "/team/img_12.png"
     }
 ]

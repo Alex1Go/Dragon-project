@@ -1,4 +1,5 @@
 import About from '../components/About/About';
+import Footer from '../components/Footer/Footer';
 import Hero from '../components/Hero/Hero';
 import RocketSlider from '../components/Rockets/Rockets';
 import Team from '../components/Team/Team';
@@ -14,6 +15,7 @@ const HomePage = () => {
         <Total />
         <About />
         <Team />
+        <Footer />
       </Container>
     </>
   );
