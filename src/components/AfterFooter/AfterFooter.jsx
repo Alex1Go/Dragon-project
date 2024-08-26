@@ -13,3 +13,10 @@ const AfterFooter = () => {
   );
 };
 export default AfterFooter;
+
+// "scripts": {
+//   "dev": "vite",
+//   "build": "vite build",
+//   "lint": "eslint .",
+//   "preview": "vite preview"
+// },
