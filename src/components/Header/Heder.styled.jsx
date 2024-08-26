@@ -1,7 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { Link, NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
-import { globalColor } from "../../styles/roots";
+import { globalColor } from '../../styles/roots';
 
 export const HeaderContainer = styled.header`
   position: absolute;
@@ -43,13 +43,9 @@ export const StyledLink = styled(NavLink)`
   font-weight: 400;
   font-size: 16px;
   color: ${globalColor.colorWhite};
-
-  &.active {
-    color: #a2d6ee;
-  }
 `;
 export const Contactbtn = styled.button`
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;

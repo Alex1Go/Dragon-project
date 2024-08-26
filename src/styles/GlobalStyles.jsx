@@ -1,6 +1,6 @@
-import styled, { createGlobalStyle } from "styled-components";
-import "modern-normalize";
-import { globalColor } from "./roots";
+import styled, { createGlobalStyle } from 'styled-components';
+import 'modern-normalize';
+import { globalColor } from './roots';
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -55,10 +55,12 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export const Container = styled.main`
-  padding: 0 59px 0 60px;
   margin: 0 auto;
   width: 1440px;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+`;
+export const ContainerTwo = styled.div`
+  padding: 0 59px 0 60px;
 `;
 
 export default GlobalStyles;

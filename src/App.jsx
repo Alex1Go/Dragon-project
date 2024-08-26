@@ -1,6 +1,7 @@
-import { Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import SharedLayout from "./components/SharedLayout";
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import RocketDetail from './pages/RocketDetail';
+import SharedLayout from './components/SharedLayout';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="rocket/:id" element={<RocketDetail />} />
         </Route>
       </Routes>
     </>

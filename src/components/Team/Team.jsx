@@ -6,7 +6,7 @@ const Team = () => {
     <>
       <section
         style={{
-          // paddingBottom: '100px',
+          paddingLeft: '60px',
           display: 'flex',
           position: 'relative',
         }}

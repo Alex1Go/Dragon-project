@@ -1,7 +1,3 @@
-// import styled from "styled-components";
-// import { globalColor } from "../../styles/roots";
-
-// export const  = styled.``;
 import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
@@ -20,42 +16,33 @@ export const ImageSlide = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  width: 1440px;
+  height: 834px;
+  overflow: hidden;
 `;
 
 export const Image = styled.img`
   width: 1440px;
-  height: auto;
-  max-height: 834px;
+  height: 834px;
   object-fit: cover;
 `;
+
 export const Infobox = styled.div`
   position: absolute;
   top: 436px;
   left: 60px;
-  width: 468px;
+  width: 600px;
 `;
 export const Title = styled.h2`
   font-weight: 700;
   font-size: 64px;
   text-transform: uppercase;
   margin-bottom: 24px;
+  text-align: left;
 `;
 export const Description = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 171%;
-`;
-export const CustomArrow = styled.div`
-  position: absolute;
-  top: 50%;
-  ${({ direction }) => (direction === 'right' ? 'right: 10px;' : 'left: 10px;')}
-  transform: translateY(-50%);
-  z-index: 1;
-  cursor: pointer;
-`;
-
-export const SvgStyled = styled.svg`
-  width: 24px;
-  height: 24px;
-  fill: #fff;
+  text-align: left;
 `;

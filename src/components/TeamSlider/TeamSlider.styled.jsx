@@ -3,7 +3,7 @@ import { globalColor } from '../../styles/roots';
 
 export const SliderContainer = styled.div`
   width: 100%;
-  max-width: 874px;
+  /* max-width: 874px; */
   overflow: hidden;
 `;
 export const SlidesWrapper = styled.div`
@@ -54,7 +54,7 @@ export const Name = styled.h3`
 export const NavButton = styled.button`
   position: absolute;
   bottom: 0;
-  ${(props) => (props.direction === 'prev' ? 'left: 0;' : 'right: 1059px;')};
+  ${(props) => (props.direction === 'prev' ? 'left: 60px;' : 'right: 1119px;')};
   background-color: #ffffff;
   width: 125px;
   height: 126px;
