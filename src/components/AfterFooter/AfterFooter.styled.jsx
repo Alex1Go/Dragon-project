@@ -9,7 +9,6 @@ export const Box = styled.div`
   background-repeat: no-repeat;
   width: 100%;
   height: 866px;
-  margin-bottom: 100px;
 `;
 export const InfoBox = styled.div`
   position: absolute;
