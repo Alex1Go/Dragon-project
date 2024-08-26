@@ -9,6 +9,7 @@ import { selectDragons } from '../../redux/selector';
 import { Title } from './Rockets.styled';
 import sprite from '../../assets/sprite.svg';
 import CustomArrow from '../../helpers/ArrowForRocket';
+import { nanoid } from 'nanoid';
 
 const RocketSlider = () => {
   const dispatch = useDispatch();
@@ -71,11 +72,8 @@ const RocketSlider = () => {
         <Title>Our Rockets</Title>
         <Slider {...settings}>
           {rockets.map((rocket) =>
-            rocket.flickr_images.map((image, index) => (
-              <RocketItem
-                key={`${rocket.id}-${index}`}
-                rocket={{ ...rocket, image }}
-              />
+            rocket.flickr_images.map((image) => (
+              <RocketItem key={nanoid()} rocket={{ ...rocket, image }} />
             ))
           )}
         </Slider>

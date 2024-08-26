@@ -20,10 +20,6 @@ const TeamSlider = () => {
   const totalSlides = teamData.length;
   const slideRef = useRef();
 
-  // const goToSlide = (index) => {
-  //   setCurrentIndex(index);
-  // };
-
   useEffect(() => {
     const slide = slideRef.current;
     let startX = 0;
@@ -112,16 +108,6 @@ const TeamSlider = () => {
           );
         })}
       </SlidesWrapper>
-
-      {/* <DotsContainer>
-        {teamData.map((_, index) => (
-          <Dot
-            key={index}
-            active={index === currentIndex}
-            onClick={() => goToSlide(index)}
-          />
-        ))}
-      </DotsContainer> */}
     </SliderContainer>
   );
 };

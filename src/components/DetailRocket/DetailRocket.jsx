@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectDragons } from '../../redux/selector';
 import {
@@ -12,22 +12,27 @@ import {
   Title,
   Title2,
 } from './DetailRocket.styled';
+import { useEffect } from 'react';
 
 const DetailRocket = () => {
   const { id } = useParams();
-  console.log(`Rocket ID: ${id}`);
+  const location = useLocation();
   const rockets = useSelector(selectDragons);
   const rocket = rockets.items.find((item) => item.id === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!rocket) {
     return <div>Rocket not found</div>;
   }
-
+  const imageToShow = location.state?.image || rocket.flickr_images[0];
   return (
     <div style={{ paddingTop: '179px' }}>
       <Title>{rocket.name}</Title>
       <Rocket>
-        <Img src={rocket.flickr_images[0]} alt={rocket.name} />
+        <Img src={imageToShow} alt={rocket.name} />
         <InfoBox>
           <Title2>{rocket.name}</Title2>
           <List>

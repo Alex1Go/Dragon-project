@@ -2,12 +2,22 @@ import styled from 'styled-components';
 import fon from '../../assets/fon.jpg';
 
 export const Box = styled.div`
+  position: relative;
   background-image: url(${fon});
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+  height: 866px;
+  margin-bottom: 100px;
 `;
+export const InfoBox = styled.div`
+  position: absolute;
+  top: 662px;
+  left: 60px;
+  width: 453px;
+`;
+
 export const Title = styled.h2`
   font-weight: 700;
   font-size: 64px;

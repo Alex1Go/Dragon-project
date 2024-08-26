@@ -15,12 +15,11 @@ import { useNavigate } from 'react-router-dom';
 const RocketItem = ({ rocket }) => {
   const navigate = useNavigate();
 
-  const handleMouseEnter = () => {
-    console.log(`Navigating to /rocket/${rocket.id}`);
-    navigate(`/rocket/${rocket.id}`);
+  const handleClick = () => {
+    navigate(`/rocket/${rocket.id}`, { state: { image: rocket.image } });
   };
   return (
-    <Itembox onMouseEnter={handleMouseEnter}>
+    <Itembox onClick={handleClick}>
       <NewLink to={`/rockets/${rocket.id}`}>
         <Img
           src={rocket.image}
